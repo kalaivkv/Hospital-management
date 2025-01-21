@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+
+
+    <header class="position-sticky top-0 start-0" style="z-index: 100;">
+        <nav class="navbar navbar-expand-lg bg-light py-3">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold logo" href="#">HOSPITAL</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item ms-3">
+                            <a class="nav-link active" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item ms-3">
+                            <a class="nav-link" href="">About</a>
+                        </li>
+                        <li class="nav-item ms-3">
+                            <a class="nav-link" href="">Service</a>
+                        </li>
+                        <li class="nav-item ms-3">
+                            <a class="nav-link" href="">Block</a>
+                        </li>
+                        <li class="nav-item ms-3">
+                            <a class="nav-link" href="">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="right-icons ms-auto">
+                        <div class="btn" onclick="showAppointment()">Make Appointment</div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div id="appointment">
+        <div class="details">
+            <h2>Make an Appointment</h2>
+            <form id="appointmentForm" onsubmit='return submitAppointment(event)'>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name<span style="color:red;">*</span></label>
+                    <input type="text" id="name" required class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email<span style="color:red;">*</span></label>
+                    <input type="email" id="email" required class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for='phone' class='form-label'>Phone Number<span style='color:red;'>*</span></label>
+                    <input type='tel' id='phone' required class='form-control'>
+                </div>
+                <div class="mb-3">
+                    <label for='date' class='form-label'>Appointment Date<span style='color:red;'>*</span></label>
+                    <input type='date' id='date' required class='form-control'>
+                </div>
+                <button type='submit' class='btn btn-primary'>Submit</button>
+                <button type='button' onclick='closeAppointment()' class='btn btn-secondary'>Close</button>
+            </form>
+
+            <h3 id="detail" style='display:none;' class="mt-2">Your Appointment Details:</h3>
+            <ul id="appointmentList"></ul>
+            <button type='button' onclick='updateAppointment()' id='updateBtn' style='display:none;' class='btn btn-warning'>Update Appointment</button>
+            <button type='button' onclick='deleteAppointment()' id='deleteBtn' style='display:none;' class='btn btn-danger'>Delete Appointment</button>
+
+        </div>
+    </div>
+
+    <!-- Home --->
+
+    <div class="main-home">
+        <div class="container">
+            <div class="home">
+                <div class="home-left-content">
+                    <span>welcome to hospital management</span>
+                    <h2>We take care our<br> Patients Healths</h2>
+
+                    <div class="home-btn">
+                        <a href="">Read More</a>
+                        <a class="homebtnsec" href="">Appointment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="technology">
+            <div class="main-technology">
+
+                <div class="inner-technology">
+                    <span></span>
+                    <i class="bi bi-person-wheelchair"></i>
+                    <h2>Normal Chekup</h2>
+                    <p> Routine checkups can identify potential health issues before they become serious.</p>
+                </div>
+
+                <div class="inner-technology">
+                    <span></span>
+                    <i class="bi bi-person-raised-hand"></i>
+                    <h2>Body Temperature</h2>
+                    <p>Get your temperature checked in just minutes!</p>
+                </div>
+
+                <div class="inner-technology">
+                    <span></span>
+                    <i class="bi bi-moisture"></i>
+                    <h2>Blood Test</h2>
+                    <p>Measures red and white blood cells, hemoglobin, and platelets to assess overall health.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>About Us</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center
+   align-items-stretch position-relative">
+                    <a href="https://youtu.be/74DWwSxsVSs?si=3iHDYeRb1Skab25g" class="play-btn mb-4"></a>
+                </div>
+
+                <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch
+   justify-content-center py-5 px-lg-5">
+
+                    <div class="right">
+                        <div class="icon"><i class="bi bi-heart-pulse-fill"></i></div>
+                        <h4 class="title"><a href="">HEALTH IS WEALTH</a></h4>
+                        <p class="para">The adage "Health is wealth" encapsulates the profound truth that good health is
+                            one of the most valuable assets a person can possess.</p>
+                    </div>
+
+                    <div class="right">
+                        <div class="icon"><i class="bi bi-lungs-fill"></i></div>
+                        <h4 class="title"><a href="">EMERGENCY</a></h4>
+                        <p class="para">Emergency medical services (EMS) are a critical component of healthcare systems
+                            worldwide, providing urgent pre-hospital care and transportation for individuals
+                            experiencing serious illness or injury.</p>
+                    </div>
+
+                    <div class="right">
+                        <div class="icon"><i class="bi bi-hospital"></i></div>
+                        <h4 class="title"><a href="">SERVICES </a></h4>
+                        <p class="para">Rapid transport for critically ill or injured patients over long distances or
+                            difficult terrains.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors  -->
+    <section id="doctors" class="doctors">
+        <div class="container">
+            <div class="section-title text-center my-5">
+                <h2>Doctors</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="member d-flex align-items-start">
+                        <div class="pic"><img src="images/1.png" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>Rozan Chitrakar</h4>
+                            <span>Chief Medical Officer</span>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, beatae.</p>
+                            <div class="social">
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-twitter-x"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mt-4 mt-lg-0">
+                    <div class="member d-flex align-items-start">
+                        <div class="pic"><img src="images/2.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>Pratikshya Rai</h4>
+                            <span>Anesthesiologist</span>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore, sapiente?</p>
+                            <div class="social">
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-twitter-x"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mt-4">
+                    <div class="member d-flex align-items-start">
+                        <div class="pic"><img src="images/3.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>Bratt Watson</h4>
+                            <span>Cardiology</span>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, repellendus.</p>
+                            <div class="social">
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-twitter-x"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mt-4">
+                    <div class="member d-flex align-items-start">
+                        <div class="pic"><img src="images/4.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>Lauren Jones</h4>
+                            <span>Neurosurgeon</span>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique, ipsum.</p>
+                            <div class="social">
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-twitter-x"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- customer Review -->
+
+    <div class="main-review">
+        <section>
+            <div class="review-heading">
+                <h1>Our Customers Review</h1>
+            </div>
+            <div class="main-inner-review">
+                <div class="review-inner-content">
+
+                    <div class="review-box">
+                        <img src="images/pic1.png" alt="">
+                        <h2>Lara John</h2>
+                        <div class="review-stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                        </div>
+                        <div class="review-text">
+                            <p>Dr. Satishchandra gore is the best doctor. He was friendly and helpful. Oyster and pearl
+                                hospital is the best hospital in pune. Thank you</p>
+                        </div>
+                    </div>
+
+                    <div class="review-box">
+                        <img src="images/pic2.png" alt="">
+                        <h2>Lara John</h2>
+                        <div class="review-stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star"></i>
+                            <i class="bi bi-star"></i>
+                        </div>
+                        <div class="review-text">
+                            <p>The support staff at Well-Key were very professional and pleasant, providing excellent
+                                service during my visit for a UTI with my daughter</p>
+                        </div>
+                    </div>
+
+                    <div class="review-box">
+                        <img src="images/pic3.png" alt="">
+                        <h2>Lara John</h2>
+                        <div class="review-stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                            <i class="bi bi-star"></i>
+                        </div>
+                        <div class="review-text">
+                            <p>The care at City Hospital was outstanding, with compassionate staff and efficient service
+                                that made my experience stress-free.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- footer -->
+
+    <div class="foot">
+        <footer class="pt-5 pb-5">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-md-12 my-5">
+                        <div class="row text-center">
+                            <div class="col">
+                                <h5 class="fw-bold mb-4">Popular searches</h5>
+                                <p><a href="" class="text-decoration-none"> Precision Medicine</a></p>
+                                <p><a href="" class="text-decoration-none"> Telehealth</a></p>
+                                <p><a href="" class="text-decoration-none"> Health Gamification</a></p>
+                                <p><a href="" class="text-decoration-none"> Healthcare</a></p>
+                                <p><a href="" class="text-decoration-none"> Calendar templates</a></p>
+
+                            </div>
+                            <div class="col">
+                                <h5 class="fw-bold mb-4">Doctors</h5>
+                                <p><a href="" class="text-decoration-none"> Anesthesiologist</a></p>
+                                <p><a href="" class="text-decoration-none"> Endocrinologist</a></p>
+                                <p><a href="" class="text-decoration-none"> Family Physician</a></p>
+                                <p><a href="" class="text-decoration-none"> Gastroenterologist</a></p>
+                                <p><a href="" class="text-decoration-none"> Neurologist</a></p>
+
+                            </div>
+                            <div class="col">
+                                <h5 class="fw-bold mb-4">Recommended categories</h5>
+                                <p><a href="" class="text-decoration-none"> Instagram templates</a></p>
+                                <p><a href="" class="text-decoration-none"> Workshop templates</a></p>
+                                <p><a href="" class="text-decoration-none"> Data templates</a></p>
+                                <p><a href="" class="text-decoration-none"> Laptop mockups</a></p>
+                                <p><a href="" class="text-decoration-none"> Design inspirations</a></p>
+
+                            </div>
+                            <div class="col">
+                                <h5 class="fw-bold mb-4">Top categories</h5>
+                                <p><a href="" class="text-decoration-none"> Design templates</a></p>
+                                <p><a href="" class="text-decoration-none"> Libraries</a></p>
+                                <p><a href="" class="text-decoration-none"> Icons</a></p>
+                                <p><a href="" class="text-decoration-none"> Development</a></p>
+                                <p><a href="" class="text-decoration-none"> Brainstorming</a></p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
